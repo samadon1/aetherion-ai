@@ -60,6 +60,7 @@ import { AllowedFileExtensions } from "@lichtblick/suite-base/constants/allowedF
 import { useAppContext } from "@lichtblick/suite-base/context/AppContext";
 import {
   LayoutState,
+  useCurrentLayoutActions,
   useCurrentLayoutSelector,
 } from "@lichtblick/suite-base/context/CurrentLayoutContext";
 import {
@@ -134,7 +135,7 @@ function WorkspaceContent(props: WorkspaceProps): React.JSX.Element {
   const { PerformanceSidebarComponent } = useAppContext();
   const { classes } = useStyles();
   const containerRef = useRef<HTMLDivElement>(ReactNull);
-  const { availableSources, selectSource } = usePlayerSelection();
+  const { availableSources, selectSource, selectedSource } = usePlayerSelection();
   const playerPresence = useMessagePipeline(selectPlayerPresence);
   const playerAlerts = useMessagePipeline(selectPlayerAlerts);
 
@@ -159,6 +160,38 @@ function WorkspaceContent(props: WorkspaceProps): React.JSX.Element {
   );
 
   const { dialogActions, sidebarActions } = useWorkspaceActions();
+  const { savePanelConfigs, changePanelLayout } = useCurrentLayoutActions();
+
+  // Apply sample layout when a sample data source with sampleLayout is selected
+  const appliedSampleLayoutRef = useRef<string | undefined>(undefined);
+  useEffect(() => {
+    if (
+      selectedSource?.type === "sample" &&
+      selectedSource.sampleLayout &&
+      appliedSampleLayoutRef.current !== selectedSource.id
+    ) {
+      log.debug("Applying sample layout for data source:", selectedSource.id);
+      const { configById, layout } = selectedSource.sampleLayout;
+
+      // Apply the layout configuration
+      if (layout) {
+        changePanelLayout({ layout });
+      }
+
+      // Apply panel configs
+      if (configById) {
+        savePanelConfigs({
+          configs: Object.entries(configById).map(([id, config]) => ({
+            id,
+            config: config as Record<string, unknown>,
+          })),
+        });
+      }
+
+      appliedSampleLayoutRef.current = selectedSource.id;
+    }
+  }, [selectedSource, changePanelLayout, savePanelConfigs]);
+
   const { handleFiles } = useHandleFiles({
     availableSources,
     selectSource,
