@@ -17,7 +17,7 @@ export const openDialog = {
   learnMore: "Learn more",
   needHelp: "Need help?",
   needHelpDescription: "View our documentation, or check out the tutorials on the Foxglove blog.",
-  newToLichtblick: "New to Lichtblick?",
+  newToLichtblick: "New to Aetherion?",
   newToLichtblickDescription:
     "Start by exploring a sample dataset or checking out our documentation.",
   openAGitHubIssue: "Open a GitHub issue",
