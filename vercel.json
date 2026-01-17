@@ -1,4 +1,7 @@
 {
+  "buildCommand": "yarn web:build:prod",
+  "outputDirectory": "web/.webpack",
+  "installCommand": "yarn install",
   "github": {
     "silent": true
   },
