@@ -19,7 +19,7 @@ const params: ConfigParams = {
   outputPath: path.resolve(__dirname, ".webpack"),
   contextPath: path.resolve(__dirname, "src"),
   entrypoint: "./entrypoint.tsx",
-  prodSourceMap: "source-map",
+  prodSourceMap: false,
   version: packageJson.version,
 };
 
