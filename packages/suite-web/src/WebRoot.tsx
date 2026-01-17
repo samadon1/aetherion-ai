@@ -58,6 +58,19 @@ export function WebRoot(props: {
   }
   const [extensionLoaders] = useState(() => defaultExtensionLoaders);
 
+  // Auto-load sample data if no data source is specified in URL
+  const deepLinks = useMemo(() => {
+    const currentUrl = new URL(window.location.href);
+    const hasDataSource = currentUrl.searchParams.has("ds");
+
+    if (!hasDataSource) {
+      // Add sample-nuscenes as default data source for demo
+      currentUrl.searchParams.set("ds", "sample-nuscenes");
+      return [currentUrl.href];
+    }
+    return [window.location.href];
+  }, []);
+
   const dataSources = useMemo(() => {
     const sources = [
       new Ros1LocalBagDataSourceFactory(),
@@ -75,8 +88,8 @@ export function WebRoot(props: {
 
   return (
     <SharedRoot
-      enableLaunchPreferenceScreen
-      deepLinks={[window.location.href]}
+      enableLaunchPreferenceScreen={false}
+      deepLinks={deepLinks}
       dataSources={dataSources}
       appConfiguration={appConfiguration}
       extensionLoaders={extensionLoaders}

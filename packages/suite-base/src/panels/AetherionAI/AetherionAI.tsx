@@ -233,11 +233,22 @@ export function AetherionAI({ context }: AetherionAIProps): React.JSX.Element {
     context.saveState(config);
   }, [config, context]);
 
-  // Settings panel
+  // Settings panel - only show if env vars are not set
   useEffect(() => {
+    const hasEnvKeys = Boolean(GEMINI_API_KEY) && Boolean(COSMOS_ENDPOINT);
+
+    if (hasEnvKeys) {
+      // No settings needed when env vars are configured
+      context.updatePanelSettingsEditor({
+        actionHandler: () => {},
+        nodes: {},
+      });
+      return;
+    }
+
     const settingsTree: SettingsTreeNodes = {
       general: {
-        label: "General",
+        label: "API Configuration",
         fields: {
           geminiApiKey: {
             label: "Gemini API Key",
