@@ -5,7 +5,13 @@
 Aetherion AI transforms how robotics engineers analyze, debug, and augment their autonomous vehicle datasets using Google's Gemini 3 API.
 
 <p align="center">
-  <img alt="Aetherion AI screenshot" src="resources/screenshot.png">
+  <img alt="Aetherion AI - Gap Finder" src="resources/demo_1.png" width="80%">
+</p>
+<p align="center">
+  <img alt="Aetherion AI - Data Simulation" src="resources/demo_2.png" width="80%">
+</p>
+<p align="center">
+  <img alt="Aetherion AI - Debugger" src="resources/demo_3.png" width="80%">
 </p>
 
 ## The Problem
