@@ -13,3 +13,7 @@ declare const API_URL: string | undefined;
 declare const LICHTBLICK_SUITE_VERSION: string | undefined;
 
 declare const DEV_WORKSPACE: string | undefined;
+
+declare const GEMINI_API_KEY: string | undefined;
+
+declare const COSMOS_ENDPOINT: string | undefined;

@@ -90,7 +90,8 @@ export function AetherionAI({ context }: AetherionAIProps): React.JSX.Element {
   const [config, setConfig] = useState<AetherionAIConfig>(() => ({
     ...DEFAULT_CONFIG,
     ...(context.initialState as Partial<AetherionAIConfig>),
-    geminiApiKey: (context.initialState as Partial<AetherionAIConfig>)?.geminiApiKey || "AIzaSyCabeY7Vxa-d9qkBkb6x7uin1Z9xpXJoaE",
+    geminiApiKey: (context.initialState as Partial<AetherionAIConfig>)?.geminiApiKey || GEMINI_API_KEY || "",
+    cosmosEndpoint: (context.initialState as Partial<AetherionAIConfig>)?.cosmosEndpoint || COSMOS_ENDPOINT || "",
   }));
 
   const [topics, setTopics] = useState<readonly Topic[]>([]);

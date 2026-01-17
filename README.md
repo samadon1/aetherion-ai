@@ -157,6 +157,10 @@ corepack enable
 # Install dependencies
 yarn install
 
+# Configure environment variables (optional)
+cp .env.example .env
+# Edit .env and add your API keys
+
 # Start development server
 yarn web:serve
 ```
@@ -164,6 +168,17 @@ yarn web:serve
 Open http://localhost:8080 in your browser.
 
 ### Configuration
+
+**Option 1: Environment Variables (Recommended for deployment)**
+
+Copy `.env.example` to `.env` and add your API keys:
+
+```bash
+GEMINI_API_KEY=your_gemini_api_key_here
+COSMOS_ENDPOINT=your_cosmos_endpoint_here
+```
+
+**Option 2: Panel Settings**
 
 1. Add the **AetherionAI** panel from the panel list
 2. Click the settings gear icon
