@@ -183,10 +183,11 @@ export const mainConfig =
   </html>
   `,
           foxgloveExtraHeadTags: `
-            <title>Lichtblick</title>
+            <title>Aetherion AI</title>
             <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
             <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
             <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+            <link rel="preload" href="https://assets.foxglove.dev/NuScenes-v1.0-mini-scene-0061-df24c12.mcap" as="fetch" crossorigin="anonymous" />
           `,
           ...params.indexHtmlOptions,
         }),
