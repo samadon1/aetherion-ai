@@ -63,12 +63,6 @@ const CAMERA_PRIORITY = [
   "cam_right",
 ];
 
-// Helper to format time
-function formatTime(time: Time | undefined): string {
-  if (!time) return "N/A";
-  return (time.sec + time.nsec / 1e9).toFixed(3) + "s";
-}
-
 // Helper to safely stringify data with depth limit
 function safeStringify(obj: unknown, maxDepth = 3, currentDepth = 0): string {
   if (currentDepth >= maxDepth) return "[...]";
@@ -246,12 +240,12 @@ export function AetherionAI({ context }: AetherionAIProps): React.JSX.Element {
         fields: {
           geminiApiKey: {
             label: "Gemini API Key",
-            input: "password",
+            input: "string",
             value: config.geminiApiKey,
           },
           cosmosEndpoint: {
             label: "Simulation Endpoint",
-            input: "password",
+            input: "string",
             value: config.cosmosEndpoint,
           },
         },
@@ -357,7 +351,6 @@ export function AetherionAI({ context }: AetherionAIProps): React.JSX.Element {
     for (const msg of currentFrameMessages) {
       const topicName = msg.topic;
       const data = msg.message as Record<string, unknown>;
-      const timestamp = formatTime(msg.receiveTime);
 
       // Create sensor-specific formatted summaries
       let dataSummary = "";
