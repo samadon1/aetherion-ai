@@ -173,7 +173,9 @@ Open http://localhost:8080 in your browser.
 
 ## Demo Video
 
-[Link to 3-minute demo video]
+[![Aetherion AI Demo](https://img.youtube.com/vi/iM1paskyHIY/0.jpg)](https://youtu.be/iM1paskyHIY)
+
+[Watch the demo on YouTube](https://youtu.be/iM1paskyHIY)
 
 ## Tech Stack
 
