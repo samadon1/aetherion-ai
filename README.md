@@ -111,14 +111,14 @@ A: "The IMU shows angular velocity of (0.02, -0.01, 0.15) rad/s which indicates
 ```javascript
 // Gap Finder - Creative analysis
 {
-  model: "gemini-2.0-flash",
+  model: "gemini-3-flash-preview",
   temperature: 0.7,
   maxOutputTokens: 2048
 }
 
 // Debugger - Precise technical analysis
 {
-  model: "gemini-2.0-flash",
+  model: "gemini-3-flash-preview",
   temperature: 0.3,
   maxOutputTokens: 4096
 }
