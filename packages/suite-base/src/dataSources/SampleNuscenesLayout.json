@@ -74,22 +74,64 @@
       "transforms": {},
       "topics": {
         "/CAM_BACK_LEFT/image_rect_compressed": {
-          "visible": false
+          "visible": true,
+          "cameraInfoTopic": "/CAM_BACK_LEFT/camera_info"
         },
         "/CAM_BACK_RIGHT/image_rect_compressed": {
-          "visible": false
+          "visible": true,
+          "cameraInfoTopic": "/CAM_BACK_RIGHT/camera_info"
         },
         "/CAM_BACK/image_rect_compressed": {
-          "visible": false
+          "visible": true,
+          "cameraInfoTopic": "/CAM_BACK/camera_info"
         },
         "/CAM_FRONT_LEFT/image_rect_compressed": {
-          "visible": false
+          "visible": true,
+          "cameraInfoTopic": "/CAM_FRONT_LEFT/camera_info"
         },
         "/CAM_FRONT_RIGHT/image_rect_compressed": {
-          "visible": false
+          "visible": true,
+          "cameraInfoTopic": "/CAM_FRONT_RIGHT/camera_info"
         },
         "/CAM_FRONT/image_rect_compressed": {
-          "visible": false
+          "visible": true,
+          "cameraInfoTopic": "/CAM_FRONT/camera_info"
+        },
+        "/CAM_BACK_LEFT/camera_info": {
+          "visible": true
+        },
+        "/CAM_BACK_RIGHT/camera_info": {
+          "visible": true
+        },
+        "/CAM_BACK/camera_info": {
+          "visible": true
+        },
+        "/CAM_FRONT_LEFT/camera_info": {
+          "visible": true
+        },
+        "/CAM_FRONT_RIGHT/camera_info": {
+          "visible": true
+        },
+        "/CAM_FRONT/camera_info": {
+          "visible": true
+        },
+        "/CAM_BACK_LEFT/annotations": {
+          "visible": true
+        },
+        "/CAM_BACK_RIGHT/annotations": {
+          "visible": true
+        },
+        "/CAM_BACK/annotations": {
+          "visible": true
+        },
+        "/CAM_FRONT_LEFT/annotations": {
+          "visible": true
+        },
+        "/CAM_FRONT_RIGHT/annotations": {
+          "visible": true
+        },
+        "/CAM_FRONT/annotations": {
+          "visible": true
         },
         "/markers/annotations": {
           "visible": true
@@ -119,22 +161,49 @@
           "colorMap": "turbo"
         },
         "/RADAR_BACK_LEFT": {
-          "visible": false
+          "visible": true,
+          "colorField": "x",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
         },
         "/RADAR_BACK_RIGHT": {
-          "visible": false
+          "visible": true,
+          "colorField": "x",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
         },
         "/RADAR_FRONT": {
-          "visible": false
+          "visible": true,
+          "colorField": "x",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
         },
         "/RADAR_FRONT_LEFT": {
-          "visible": false
+          "visible": true,
+          "colorField": "x",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
         },
         "/RADAR_FRONT_RIGHT": {
-          "visible": false
+          "visible": true,
+          "colorField": "x",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
         },
         "/pose": {
-          "visible": false
+          "visible": true
+        },
+        "/imu": {
+          "visible": true
+        },
+        "/gps": {
+          "visible": true
+        },
+        "/diagnostics": {
+          "visible": true
+        },
+        "/tf": {
+          "visible": true
         }
       },
       "publish": {
